@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    {% include "includes/head_references.html" %}
+    <title>{% block title %} {% endblock %}</title>
 </head>
+
+
 <body>
+
+{% include "includes/header.html" %}
+
+
+
+{% block content %}
+
+
+{% endblock %}
+
+
+
+
+<!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->
+{% include "includes/switcher.html" %}
+
+
+<!-- Javascript -->
+{% include "includes/footer.html" %}
+
+
+{% block footer_extra %}
+{% endblock %}
 
 </body>
 </html>
+
+
+
+
+
+
+

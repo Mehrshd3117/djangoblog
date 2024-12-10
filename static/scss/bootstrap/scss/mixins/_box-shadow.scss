@@ -3,7 +3,7 @@
     $result: ();
 
     @if (length($shadow) == 1) {
-      // We can pass `@include box-shadow(none);`
+      // We can pass `@includes box-shadow(none);`
       $result: $shadow;
     } @else {
       // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`

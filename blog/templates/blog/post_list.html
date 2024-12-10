@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %} Blog List {% endblock %}
+{% block content %}
+    <div class="main-wrapper">
+
+        <section class="blog-list px-3 py-5 p-md-5">
+            <div class="container">
+                {% for item in posts %}
+                    <div class="item mb-5">
+                        <div class="media">
+                            <img class="mr-3 img-fluid post-thumb d-none d-md-flex"
+                                 src="{{ item.image.url }}" alt="image">
+                            <div class="media-body">
+                                <h3 class="title mb-1"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h3>
+                                <div class="meta mb-1"><span
+                                        class="date">Published{{ item.publish_time|naturalday }}</span><span
+                                        class="time">{{ item.time_to_read }} read</span><span
+                                        class="comment"><a href="#">4 comments</a></span></div>
+                                <div class="intro">{{ item.body|truncatewords:60 }}
+                                </div>
+                                <a class="more-link"
+                                   href="{{ item.get_absolute_url }}">Read more
+                                    &rarr;</a>
+                            </div><!--//media-body-->
+                        </div><!--//media-->
+                    </div><!--//item-->
+
+                {% endfor %}
+                <nav class="blog-nav nav nav-justified my-5">
+                    <a class="nav-link-prev nav-item nav-link rounded-left" href="">Previous<i
+                            class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                    <a class="nav-link-next nav-item nav-link rounded-right" href="post_list.html">Next<i
+                            class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                </nav>
+
+            </div>
+        </section>
+
+
+
+    </div><!--//main-wrapper-->
+
+
+{% endblock %}

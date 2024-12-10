@@ -95,7 +95,7 @@ if (bundle) {
     'node_modules/jquery/dist/jquery.slim.min.js',
     'js/dist/util.js',
     'js/dist/tooltip.js',
-    'js/dist/!(util|index|tooltip).js' // include all of our js/dist files except util.js, index.js and tooltip.js
+    'js/dist/!(util|index|tooltip).js' // includes all of our js/dist files except util.js, index.js and tooltip.js
   ])
 } else {
   frameworks.push('detectBrowsers')
@@ -109,7 +109,7 @@ if (bundle) {
     jqueryFile,
     'js/coverage/dist/util.js',
     'js/coverage/dist/tooltip.js',
-    'js/coverage/dist/!(util|index|tooltip).js' // include all of our js/dist files except util.js, index.js and tooltip.js
+    'js/coverage/dist/!(util|index|tooltip).js' // includes all of our js/dist files except util.js, index.js and tooltip.js
   ])
   reporters.push('coverage-istanbul')
   conf.customLaunchers = customLaunchers
