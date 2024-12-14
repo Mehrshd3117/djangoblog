@@ -29,16 +29,26 @@
                     </div><!--//item-->
 
                 {% endfor %}
+
                 <nav class="blog-nav nav nav-justified my-5">
-                    <a class="nav-link-prev nav-item nav-link rounded-left" href="">Previous<i
-                            class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                    <a class="nav-link-next nav-item nav-link rounded-right" href="post_list.html">Next<i
-                            class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                    {% if page_obj.has_other_pages %}
+                        {% if page_obj.has_previous  %}
+                            <a class="nav-link-prev nav-item nav-link rounded-left"
+                               href="?page={{ page_obj.previous_page_number }}">Previous<i
+                                    class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                        {% endif %}
+
+
+                        {% if page_obj.has_next %}
+                            <a class="nav-link-next nav-item nav-link rounded-right"
+                               href="?page={{ page_obj.next_page_number }}">Next<i
+                                    class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                        {% endif %}
+                    {% endif %}
                 </nav>
 
             </div>
         </section>
-
 
 
     </div><!--//main-wrapper-->

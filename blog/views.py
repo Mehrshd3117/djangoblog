@@ -7,6 +7,7 @@ from .models import Post
 class BlogListView(ListView):
     context_object_name = 'posts'
     queryset = Post.objects.all()
+    paginate_by = 2
 
 
 class BlogDetailView(DetailView):
